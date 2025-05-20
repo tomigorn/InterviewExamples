@@ -11,6 +11,7 @@ namespace InterviewExamples
             Console.WriteLine("1 - Animal Factory");
             Console.WriteLine("2 - Try-Catch Exception Handling");
             Console.WriteLine("3 - Linq Null Exeption handling");
+            Console.WriteLine("4 - Employee with inheritance, LINQ, and deferred execution");
 
             var choice = Console.ReadLine();
             switch (choice)
@@ -23,6 +24,9 @@ namespace InterviewExamples
                     break;
                 case "3":
                     LinqNullHandling.Run();
+                    break;
+                case "4":
+                    Employee_Inheritance_Linq_DeferredExecution.Run();
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
