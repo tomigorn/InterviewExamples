@@ -13,6 +13,7 @@ namespace InterviewExamples
             Console.WriteLine("3 - Linq Null Exeption handling");
             Console.WriteLine("4 - Employee with inheritance, LINQ, and deferred execution");
             Console.WriteLine("5 - Events with Delegates and Mutable States and closures");
+            Console.WriteLine("6 - Delegate Closure Trap");
 
             var choice = Console.ReadLine();
             switch (choice)
@@ -31,6 +32,9 @@ namespace InterviewExamples
                     break;
                 case "5":
                     EventsDelegatesAndMutableStates.Run();
+                    break;
+                case "6":
+                    DelegateClosureTrap.Run();
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
