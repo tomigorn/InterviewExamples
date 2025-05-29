@@ -12,13 +12,13 @@ namespace InterviewExamples.Examples
         {
 
             var users = new List<User?>
-        {
-            new User { Name = "Alice", Age = 30 },
-            null,
-            new User { Name = "Bob", Age = 17 },
-            new User { Name = "Charlie", Age = 25 },
-            null
-        };
+            {
+                new User { Name = "Alice", Age = 30 },
+                null,
+                new User { Name = "Bob", Age = 17 },
+                new User { Name = "Charlie", Age = 25 },
+                null
+            };
 
             var adultNames = users
                 .Where(u => u != null && u.Age >= 18)
