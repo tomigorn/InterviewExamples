@@ -61,7 +61,7 @@ public class LeetCode_AddTwoNumbers
         int carryover = 0;
 
 
-        while (true)
+        while (currentL1Position.next == null && currentL2Position.next == null)
         {
             int currentSum = currentL1Position.val + currentL2Position.val + carryover;
             carryover = 0;
@@ -72,18 +72,12 @@ public class LeetCode_AddTwoNumbers
             }
             solutionPosition.val = currentSum;
 
-            
-            if (currentL1Position.next == null && currentL2Position.next == null)
-            {
-                break;
-            } else {
-                currentL1Position = currentL1Position.next ?? new ListNode();
-                currentL2Position = currentL2Position.next ?? new ListNode();
+            currentL1Position = currentL1Position.next ?? new ListNode();
+            currentL2Position = currentL2Position.next ?? new ListNode();
 
-                ListNode newNode = new();
-                solutionPosition.next = newNode;
-                solutionPosition = newNode;
-            }
+            ListNode newNode = new();
+            solutionPosition.next = newNode;
+            solutionPosition = newNode;
         }
 
         if (carryover != 0)
