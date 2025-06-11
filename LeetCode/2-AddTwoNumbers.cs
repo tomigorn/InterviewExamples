@@ -50,7 +50,7 @@ public class ListNode
     }
 }
 
-public class Solution
+public class LeetCode_AddTwoNumbers
 {
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
