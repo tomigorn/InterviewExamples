@@ -1,7 +1,7 @@
 
 public class LeetCode_MedianOfTwoSortedArrays
 {
-    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+    public double FindMedianSortedArraysBigOMPlusN(int[] nums1, int[] nums2) {
         List<int> mergedList = new();
 
         int left = 0, right = 0;
