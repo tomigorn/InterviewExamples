@@ -3,7 +3,7 @@ using System.Collections.Generic;
  
 static class ExerciseCustomDict 
 { 
-    static void Main(string[] args) 
+    public static void Run() 
     { 
         //throw new Exception("Hey, don't mind me. I'm only here to stop the code from running."); 
        

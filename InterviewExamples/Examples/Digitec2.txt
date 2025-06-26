@@ -1,0 +1,39 @@
+Input: aaabbccccd
+
+Ouput: a3b2c4d1
+
+
+Case: 
+Input: aaabbccccdaa 
+Ouput: a3b2c4d1a2
+
+
+List<char, int> outputList = new()
+
+for(int i = 0;i++;i <= input.length){
+	if(currentChar!=previousChar){
+  	outputList.Add(currentChar, 1)
+  }else{
+  	outputList[j]=outputList[j]+1
+  }
+}
+
+
+
+Dict resultDict = new();
+
+for(int i = 0;i++;i <= input.length){
+
+	if(!resultDict.contains(intput[i])){
+  	resultDict.Add(input[i],1);
+  }else{
+  	resultDict[input[i]]++;
+  }
+  
+}
+
+outputstring = dict.foreach(key.tostring + value.tostring)
+string outputstring = resultDict.foreach();
+
+
+

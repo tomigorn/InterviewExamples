@@ -8,6 +8,7 @@ namespace InterviewExamples
         static void Main(string[] args)
         {
             Console.WriteLine("Choose an example to run:");
+            Console.WriteLine("D - Digitec Example 1");
             Console.WriteLine("1 - Animal Factory");
             Console.WriteLine("2 - Try-Catch Exception Handling");
             Console.WriteLine("3 - Linq Null Exeption handling");
@@ -18,6 +19,9 @@ namespace InterviewExamples
             var choice = Console.ReadLine();
             switch (choice)
             {
+                case "D":
+                    ExerciseCustomDict.Run();
+                    break;
                 case "1":
                     AnimalFactoryExample.Run();
                     break;
