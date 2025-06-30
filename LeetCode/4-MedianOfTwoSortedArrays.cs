@@ -1,4 +1,3 @@
-
 public class LeetCode_MedianOfTwoSortedArrays
 {
     public double FindMedianSortedArraysBigOMPlusN(int[] nums1, int[] nums2) {
