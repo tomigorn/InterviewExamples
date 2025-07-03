@@ -15,6 +15,7 @@ public class ZigzagConversionTests1
     [TestCase("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR")]
     [TestCase("PAYPALISHIRING", 4, "PINALSIGYAHRPI")]
     [TestCase("A", 1, "A")]
+    [TestCase("AB", 1, "AB")]
     public void GetZigzagConversion_WithValidInputStringAndValidLineNR_ReturnExpectedString(string inputString, int numberOfLines, string expectedOutputString)
     {
         Assert.That(leetCode_ZigzagConversion.Convert(inputString, numberOfLines), Is.EqualTo(expectedOutputString));

@@ -25,23 +25,65 @@ public class LeetCode_ZigzagConversion
 {
     public string Convert(string s, int numRows)
     {
+        if (s.Length < numRows || numRows == 1) {
+            return s;
+        }
+
+        StringBuilder[] rows = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++)
+        {
+            rows[i] = new();
+        }
+
+        int currentRow = 0;
+        bool diagonal = false;
+
+        foreach (char c in s)
+        {
+            rows[currentRow].Append(c);
+
+            if (currentRow == 0 || currentRow == numRows - 1)
+            {
+                diagonal = !diagonal;
+            }
+
+            if (!diagonal)
+            {
+                currentRow--;
+            }
+            else
+            {
+                currentRow++;
+            }
+        }
+
+        StringBuilder result = new();
+        foreach (var row in rows)
+        {
+            result.Append(row);
+        }
+        return result.ToString();
+    }
+    
+
+
+
+    public string ConvertSuboptimalSolutionWithArray(string s, int numRows)
+    {
         int numColumns = s.Length;
         char[,] output = new char[numRows, numColumns];
-        // int currentSpaceBetweenChars = numRows - 2;
-        // int currentStringIndex = 0;
-        // int defaultOffsetBetweenChars = 2 * numRows - 2;
 
         int currentRow, currentColumn;
         currentRow = currentColumn = 0;
         bool diagonal = false;
-        for (int i = 0; i < s.Length; i++)
+        for (int i = 0; i < s.Length && numRows != 1; i++)
         {
             output[currentRow, currentColumn] = s[i];
             if (!diagonal && currentRow < numRows - 1)
             {
                 currentRow++;
             }
-            else if(!diagonal)
+            else if (!diagonal)
             {
                 diagonal = true;
             }
@@ -51,7 +93,7 @@ public class LeetCode_ZigzagConversion
                 currentRow--;
                 currentColumn++;
             }
-            else if(diagonal)
+            else if (diagonal)
             {
                 diagonal = false;
 
@@ -60,17 +102,24 @@ public class LeetCode_ZigzagConversion
         }
 
         StringBuilder sb = new();
-        for(int row = 0; row < numRows; row++)
+        for (int row = 0; row < numRows; row++)
         {
             for (int column = 0; column < numColumns; column++)
             {
-                if (output[row, column] != null && output[row, column] != '\0')
+                if (output[row, column] != '\0')
                 {
                     sb.Append(output[row, column]);
-                    
+
                 }
             }
         }
+
+        if (numRows == 1)
+        {
+            sb.Clear();
+            sb.Append(s);
+        }
+
         return sb.ToString();
 
 
