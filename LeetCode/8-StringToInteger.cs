@@ -32,24 +32,13 @@ public class LeetCode_StringToInteger
         }
         string removedLeadingWhitespace = s.Substring(i);
 
-        Dictionary<char, int> digits = new Dictionary<char, int>();
-        digits.Add('0', 0);
-        digits.Add('1', 1);
-        digits.Add('2', 2);
-        digits.Add('3', 3);
-        digits.Add('4', 4);
-        digits.Add('5', 5);
-        digits.Add('6', 6);
-        digits.Add('7', 7);
-        digits.Add('8', 8);
-        digits.Add('9', 9);
-
-        BigInteger result = 0;
+        long result = 0;
         foreach (char c in removedLeadingWhitespace)
         {
-            if (digits.ContainsKey(c))
+            if (c >= '0' && c <= '9' && result < int.MaxValue)
             {
-                result = result * 10 + digits[c];
+                int digit = c - '0';
+                result = result * 10 + digit;
             }
             else
             {
@@ -58,22 +47,13 @@ public class LeetCode_StringToInteger
         }
 
         int intResult;
-        try
-        {
+        if (positive && result > int.MaxValue) {
+            intResult = int.MaxValue;
+        } else if (!positive && result > int.MaxValue) {
+            intResult = int.MinValue;
+        } else {
             intResult = positive ? (int) result : (int) result * -1;
         }
-        catch
-        {
-            if (positive)
-            {
-                intResult = int.MaxValue;
-            }
-            else
-            {
-                intResult = int.MinValue;
-            }
-        }
-
         
         return intResult;
     }

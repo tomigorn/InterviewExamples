@@ -19,6 +19,8 @@ public class StringToIntegerTests1
     [TestCase("0-1" , 0)]
     [TestCase("words and 987" , 0)]
     [TestCase("-91283472332" , -2147483648)]
+    [TestCase("-2147483647" , -2147483647)]
+    [TestCase("9223372036854775808" , 2147483647)]
     public void GetReverseInt_WithValidInputInt_ReturnExpectedReverse(string s, int expectedInt)
     {
         Assert.That(leetCode_StringToInteger.MyAtoi(s), Is.EqualTo(expectedInt));
